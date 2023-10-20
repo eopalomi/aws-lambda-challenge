@@ -1,0 +1,52 @@
+{
+  "name": "sls-reto-tecnico",
+  "version": "1.0.0",
+  "description": "Serverless aws-nodejs-typescript template",
+  "main": "serverless.ts",
+  "scripts": {
+    "test": "npx jest",
+    "deploy": "sls deploy --stage dev --verbose",
+    "sls:dev": "sls offline start --stage develop"
+  },
+  "engines": {
+    "node": ">=14.15.0"
+  },
+  "dependencies": {
+    "@middy/core": "^3.4.0",
+    "@middy/http-json-body-parser": "^3.4.0",
+    "axios": "^1.5.1",
+    "translate-google": "^1.5.0",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@serverless/typescript": "^3.0.0",
+    "@types/aws-lambda": "^8.10.71",
+    "@types/jest": "^29.5.6",
+    "@types/node": "^14.14.25",
+    "esbuild": "^0.14.11",
+    "jest": "^29.7.0",
+    "json-schema-to-ts": "^1.5.0",
+    "serverless": "^3.0.0",
+    "serverless-dynamodb": "^0.2.47",
+    "serverless-dynamodb-local": "^0.2.40",
+    "serverless-esbuild": "^1.23.3",
+    "serverless-offline": "^13.2.0",
+    "ts-jest": "^29.1.1",
+    "ts-node": "^10.4.0",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^4.1.3"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "fakeTimers": {
+      "enableGlobally": true
+    },
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
+  "author": "The serverless webpack authors (https://github.com/elastic-coders/serverless-webpack)",
+  "license": "MIT"
+}

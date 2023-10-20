@@ -1,0 +1,1 @@
+export {findByIdPlanet} from './findById';
