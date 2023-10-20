@@ -1,4 +1,4 @@
-import {peopleService} from "../../../people/service/index";
+import { peopleService } from "../../../people/service/index";
 
 let people;
 
@@ -13,11 +13,11 @@ const body = {
   gender: "female"
 };
 
-describe('GET /${STAGE}/people', () => {
-  beforeAll(async()=>{
-    people = await peopleService.savePeople(body);
-  });
+beforeAll(async () => {
+  people = await peopleService.savePeople(body);
+});
 
+describe('GET /${STAGE}/people', () => {
   test('La respuesta no debe ser vacia', async () => {
     expect(people).not.toBeNull();
     expect(people).not.toBeUndefined();
@@ -25,10 +25,10 @@ describe('GET /${STAGE}/people', () => {
   }, 5000);
 
   test('La respuesta debe ser enviado el ID en string', () => {
-      expect(typeof people).toBe('string');
+    expect(typeof people).toBe('string');
   });
 
   test('La longitud del ID debe ser 36', () => {
-    expect(people.idPeople.length).toBe(36);
+    expect(people.length).toBe(36);
   });
 });

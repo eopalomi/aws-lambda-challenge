@@ -2,7 +2,7 @@ import { formatJSONResponse } from '@libs/api-gateway';
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
 import planetService from 'src/planet/service/index';
 
-const people = async (event: APIGatewayProxyEvent):Promise<APIGatewayProxyResult> => {
+const people = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
   const body = JSON.parse(event.body) as {
     name: string,
     rotation_period: string,
@@ -24,7 +24,7 @@ const people = async (event: APIGatewayProxyEvent):Promise<APIGatewayProxyResult
 
   return formatJSONResponse({
     planet
-  });
+  }, 200);
 };
 
 export const main = people;
