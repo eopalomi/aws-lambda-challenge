@@ -32,6 +32,39 @@ Ejecutar para iniciar el despliegue del Lambda
 ```
 npm run deploy
 ```
+
+## Como usar
+La APP expone 3 endpoints en el puerto 3000
+
+GET (Obtener información planetas):
+```
+http://localhost:3000/develop/planet/{idPlaneta}
+```
+
+GET (Obtener información personas):
+```
+http://localhost:3000/develop/people/{idPeople}
+```
+
+POST (Obtener información personas):
+```
+http://localhost:3000/develop/people
+
+BODY para el request:
+
+{
+    "name":"Leia",
+    "height":"160",
+    "mass":"500",
+    "hair_color":"blonde",
+    "skin_color":"green",
+    "eye_color":"gold",
+    "birth_year":"2077/01/01",
+    "gender":"female"
+}
+```
+En la respuesta a la peticion se envia el ID de la persona, la que se puede usar en el endpoint GET para obtener la informacion de la persona.
+
 ## Construido con 🛠️
 
 _Algunas de las tecnologias usadas_:
